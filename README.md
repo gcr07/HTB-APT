@@ -101,6 +101,27 @@ file backups.zip
 
 ```
 
+## 7z Checar que hay dentro 
+
+Para checar dentro usa la "l" si te das cuenta como los comandos que se le pasan a 7z no tienen -
+
+```
+7z l backup.zip 
+
+```
+
+Lista lo que hay dentro.
+
+
+# NTDS DUMPEAR hashes 
+
+> Un controlador de dominio es miembro de un único sitio y se representa en el sitio mediante un objeto de servidor Active Directory Domain Services (AD DS). Cada objeto de servidor tiene un objeto NTDS Configuración que representa el controlador de dominio de replicación en el sitio
+
+Cuando se compromete un dominio  se suele dumpear el contenido de NTDS ( en local se dumpea la SAM y el SYSTEM para listar los hashes de los usuarios a nivel local con esos hashes puedes aplicar pass the hash en caso de que aplique y que sea priviligeado el usuario).
+
+Pero volvemos cuando comprometes un controlador de dominio puedes dumpear el NTDS.dir y el SYSTEM para dumpear todos los hashes de los usuarios del directorio activo
+
+
 
 
 
