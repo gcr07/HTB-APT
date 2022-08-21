@@ -51,7 +51,48 @@ crackmapexec smb dead:beef::b885:d62a:d679:573f
 ```
 
 
+# Puertos Abiertos 
 
+Los servicios que se pueden ver y que quiza seria bueno memorizar son:
+
+```
+88 Kerberos
+389 LDAP
+445 SMB
+5985 Servicio de Administracion remota de Windows( Si se tuviera credenciales validas podriamos suponer que el usario
+es parte del grupo " Remote Managment Users y podriamos conectarnos con evilwinrm) igual se puede hacer con cme
+
+```
+
+## 445 
+
+Para enlistar los recursos compartidos usamos 
+
+### cme
+
+```
+crackmapexec smb dead:beef::b885:d62a:d679:573f --shares
+
+```
+
+Con el comando anterior no arroja nada pero probaremos con smbclient
+
+### smbclient
+
+Nombre de la maquina apt 
+
+```
+smbclient -L apt/htb.local -N  
+
+```
+
+### Conectarse a un recurso compartido
+
+```
+smbclient //htb.local/backup -N
+dir 
+get archivoadescargar.zip
+```
 
 
 
