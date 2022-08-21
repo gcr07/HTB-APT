@@ -36,8 +36,19 @@ ping6 dead:beef::b885:d62a:d679:573f
 
 ```
 
+# NMAP IPv6
 
+```
+nmap -sC -p53,80,88,135,389,445,464,593,636,5985,9389,47001,49664,49665,49666,49667,49669,49670,49673,49689,52968 -6 dead:beef::b885:d62a:d679:573f -oN targetedipv6
+```
+# Crackmapexec ipv6
 
+Para usar esta herramienta solo pasa la ipv6 y listo
+
+```
+crackmapexec smb dead:beef::b885:d62a:d679:573f
+
+```
 
 
 
