@@ -94,9 +94,12 @@ dir
 get archivoadescargar.zip
 ```
 
+Usando el comando file para ver si realmente es un zip ( recuerda usa los files signatures) para saber el tipo de archivo
 
+```
+file backups.zip
 
-
+```
 
 
 
