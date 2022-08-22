@@ -112,6 +112,19 @@ Para checar dentro usa la "l" si te das cuenta como los comandos que se le pasan
 
 Lista lo que hay dentro.
 
+Para descifrar un password primero se saca el hash 
+
+```
+zip2john
+
+```
+ Ese hash se le pasa a John The Ripper
+ 
+ ```
+ john -w:/usr/share/wordlists/rockyou.txt hash
+ 
+ ```
+ 
 
 # NTDS DUMPEAR hashes 
 
