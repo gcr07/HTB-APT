@@ -149,7 +149,18 @@ rackmapexec smb apt -u 'domainadmin' -p 'password' --ntds vss # Intentarra volva
 
 ```
 
+### sponge 
 
+para evitar que destruyas el archivo recordar 
+
+```
+cat hashes | grep " lo que sea " > hashes # destruye el archivo
+cat hashes | grep " lo que sea " >> hashes # destruye el archivo poner todo y lo que grepeamos al final
+cat hashes | grep " lo que sea " | tee # tampcoo hace lo que queremos por jugar con el mismo archivo
+cat hashes | grep " lo que sea " | sponge hashes # este si hace la operacion remplaza lo que queremos y todo lo deja en el mismo archivo
+
+
+```
 
 
 
